@@ -6,6 +6,13 @@ const PORT = process.env.PORT
 const app = express()
 
 
+
+// MIDDLEWARE. this runs before we send responses
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+
 //routes here
 
 app.get('/', (req,res) => {
