@@ -15,6 +15,8 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use(express.static('public'))
 
+app.use(express.urlencoded({extended: true}))
+
 
 //routes here
 
@@ -31,7 +33,7 @@ app.get('/', (req,res) => {
 
   // 404 Page
 app.get('*', (req, res) => {
-  res.send('404')
+  res.send('405')
 })
 
 
